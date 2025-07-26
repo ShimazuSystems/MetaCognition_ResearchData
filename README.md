@@ -12,6 +12,7 @@ MetaCognition is an experimental architecture built to move beyond simple, singl
 * **Working Memory (memory.js)**: A stateful, capacity-constrained module that simulates cognitive focus. It uses an attention mechanism to prioritize relevant information and let unimportant details decay over time.  
 * **Emergent Layer (emergent-layer.js)**: A meta-cognitive safety net that monitors the reasoning process. If it detects circular logic, low confidence, or high uncertainty, it can intervene by generating a novel prompt to reframe the problem and unlock new insights.  
 * **Context Parser (context-parser.js)**: A utility that extracts structured information (like insights, assumptions, and evidence) from the LLM's unstructured text responses, allowing the system to build upon its own conclusions iteratively.
+* **& more!**: This list is far from exhaustive, the code is *extensive*.
 
 The goal of this architecture is to produce more transparent, robust, and auditable reasoning, where the final answer is supported by a traceable line of analytical steps.
 
