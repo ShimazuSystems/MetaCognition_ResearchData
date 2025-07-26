@@ -42,6 +42,7 @@ Each JSON file has a root object with the following key properties. Understandin
 
 Each object in the messages array represents a turn in the conversation.
 
+```
 {  
   "id": "unique-message-id",  
   "sender": "user", // or "ai"  
@@ -52,11 +53,13 @@ Each object in the messages array represents a turn in the conversation.
   "metadata": { ... }, // For AI messages  
   "reasoningTrace": \[ ... \] // For AI messages  
 }
+```
 
 ### **The lastReasoningTrace Array**
 
 This is the core of the dataset. It's an array where each object represents one step in the engine's cognitive pipeline.
 
+```
 "lastReasoningTrace": \[  
   {  
     "stage": "decomposition",  
@@ -83,6 +86,7 @@ This is the core of the dataset. It's an array where each object represents one 
     }  
   }  
 \]
+```
 
 * **stage**: The name of the cognitive stage (e.g., decomposition, criticalAnalysis, synthesis, metaReasoning). A special stage, emergent-reasoning, indicates the Emergent Layer was activated.  
 * **result**: The raw, unstructured text output from the LLM for that specific stage.  
@@ -94,6 +98,7 @@ This is the core of the dataset. It's an array where each object represents one 
 
 This object provides a useful summary of the final reasoning task.
 
+```
 "reasoningMetadata": {  
     "depth": "exhaustive",  
     "stagesCompleted": 9,  
@@ -102,11 +107,13 @@ This object provides a useful summary of the final reasoning task.
     "workingMemoryUtilization": "7/7",  
     "emergentReasoningUsed": true  
 }
+```
 
 ### **The workingMemory Object**
 
 This object shows the final state of the cognitive workspace.
 
+```
 "workingMemory": {  
   "concepts": \[  
     \["concept-id-1", { "id": "concept-id-1", "content": "...", "type": "analysis" }\]  
@@ -116,6 +123,7 @@ This object shows the final state of the cognitive workspace.
   \],  
   "timestamp": "2025-07-26T18:19:33.289Z"  
 }
+```
 
 * **concepts**: An array of \[id, object\] pairs for each concept in memory.  
 * **weights**: An array of \[id, attentionWeight\] pairs, showing the final attention score for each concept.
